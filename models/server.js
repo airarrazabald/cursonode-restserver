@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server {
     
@@ -19,6 +20,10 @@ class Server {
      * middlawres: funciones que se le agregan a nuestro rest server cuando carga la app
      */
     middlewares() {
+
+        // Añadiendo cors para restringir origenes de request 
+        this.app.use(cors())
+
         // Directorio Publico
         this.app.use( express.static('public')); 
     }

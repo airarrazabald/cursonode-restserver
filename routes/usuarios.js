@@ -9,7 +9,8 @@ const router = Router();
 
 router.get('/',usuariosGet);
 
-router.put('/',usuariosPut);
+// Se declara : y el nombre del parametro que necesitas recibir
+router.put('/:id',usuariosPut);
 
 router.post('/',usuariosPost);
 

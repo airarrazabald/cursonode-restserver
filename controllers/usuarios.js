@@ -1,22 +1,34 @@
-const { response } = require('express');
+const { response, request } = require('express');
 
 
 // en esta archivo se registran todas las funciones que seran utilizados en los routes
-const usuariosGet = ( req, res = response ) => {
+const usuariosGet = ( req = request, res = response ) => {
+    const { nombre , apikey} = req.query;
+    
     res.json({
-        msg: "get API - controlador"
+        msg: "get API - controlador",
+        nombre,
+        apikey
     });
 }
 
 const usuariosPost = ( req, res = response ) => {
+    
+    const { nombre , edad} = req.body;
+
     res.json({
-        msg: "post API - controlador"
+        msg: "post API - controlador",
+        nombre,
+        edad,
     });
 }
 
 const usuariosPut = ( req, res = response ) => {
+    const { id } = req.params; 
+
     res.json({
-        msg: "put API - controlador"
+        msg: "put API - controlador",
+        id
     });
 }
 

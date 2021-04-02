@@ -1,14 +1,12 @@
+// Importaciones propias de node 
+
+// Importaciones de terceros
 require('dotenv').config();
 
-const express = require('express');
-const app = express();
+// Importaciones personalizadas
+const Server = require('./models/server');
 
 
- 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-});
- 
-app.listen(process.env.PORT ,()=> {
-    console.log('APP esta escuchando por puerto:',process.env.PORT);
-});
+const server =  new Server();
+
+server.listen();
